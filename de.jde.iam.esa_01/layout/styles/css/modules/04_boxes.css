@@ -1,0 +1,206 @@
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen: 
+ * page structure */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@media handheld, screen {
+  .box {
+    width: 200px;
+    /*360/2 + 2* 20/2*/
+    min-height: 20px;
+    border: 0px solid #5a5a5a;
+  }
+  .box .boxhead {
+    margin: 0 10px 0;
+    padding-top: 7px;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box .inner {
+    margin: 0 10px 10px;
+    padding-bottom: 10px;
+  }
+  .box h2 {
+    color: #3fa9f5;
+    text-transform: uppercase;
+    font-size: 15pt;
+    padding: 0 26px 7px 0;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box li, .box p, .box a:link, .box a:visited {
+    font-size: 12pt;
+    line-height: 120%;
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+  .box li em, .box li strong, .box li span, .box p em, .box p strong, .box p span, .box a:link em, .box a:link strong, .box a:link span, .box a:visited em, .box a:visited strong, .box a:visited span {
+    font-size: 12pt;
+  }
+  .box li em, .box p em, .box a:link em, .box a:visited em {
+    font-style: italic;
+  }
+  .box li strong, .box p strong, .box a:link strong, .box a:visited strong {
+    font-weight: bold;
+  }
+  .box a:hover, .box a:focus, .box a:active {
+    /*color: #fff;*/
+  }
+  .box p.intro {
+    padding-bottom: 16px;
+  }
+
+  .box.status {
+    white-space: normal;
+    width: 360px;
+    max-width: 100%;
+  }
+  .box.status h2 {
+    padding-left: 12px;
+    font-size: 12pt;
+  }
+  .box.status p {
+    padding-left: 12px;
+    font-size: 11pt;
+  }
+
+  .box.media_link {
+    background-color: #2d2d2d;
+  }
+  .box.media_link .inner {
+    margin-bottom: 20px;
+  }
+  .box.media_link li {
+    border-top: 1px dashed #f2f2f2;
+    padding: 7px 0;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box.media_link li a:hover, .box.media_link li a:focus, .box.media_link li a:active {
+    color: #fff;
+  }
+  .box.media_link h2 {
+    background: url(../../img/pfeil_blau_1s.png) no-repeat right 0px;
+  }
+
+  .box.excerpt {
+    background: url(../../img/bg_merkliste.png) repeat 0 0;
+  }
+  .box.excerpt p, .box.excerpt li, .box.excerpt blockquote, .box.excerpt a:link, .box.excerpt a:visited, .box.excerpt strong, .box.excerpt em, .box.excerpt span {
+    font-family: Marion, "Times New Roman", serif;
+    font-size: 11pt;
+  }
+  .box.excerpt p, .box.excerpt li {
+    color: #4d4d4d;
+  }
+  .box.excerpt p em, .box.excerpt p strong, .box.excerpt li em, .box.excerpt li strong {
+    color: #4d4d4d;
+  }
+  .box.excerpt p strong, .box.excerpt li strong {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  .box.excerpt blockquote {
+    margin: 7px 0 17px 0;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box.excerpt .more a:link, .box.excerpt .more a:visited {
+    color: #3fa9f5;
+    background: url(../../img/pfeil_blau_1s.png) no-repeat 0 0;
+    padding-left: 32px;
+  }
+  .box.excerpt .more a:hover, .box.excerpt .more a:focus, .box.excerpt .more a:active {
+    background-size: 28px 20px;
+  }
+
+  .box.obj {
+    background-color: #fff;
+    display: inline-block;
+    width: auto;
+    max-width: 280px;
+    /*max-height: 280px;*/
+    overflow: hidden;
+  }
+  .box.obj figure {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .box.obj figure img {
+    height: auto;
+    max-height: 195px;
+    max-width: 230px;
+    width: auto;
+  }
+  .box.obj .boxhead {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .box.obj .inner {
+    padding: 25px;
+    margin: 0;
+  }
+  .box.obj h2 {
+    border-bottom: 1px dashed gray;
+    color: gray;
+  }
+  .box.obj .more.description {
+    position: absolute;
+    right: 5px;
+    top: 9px;
+  }
+  .box.obj .more.description a:hover img, .box.obj .more.description a:focus img, .box.obj .more.description a:active img {
+    width: 110%;
+    height: auto;
+  }
+
+  #overview .box.excerpt blockquote {
+    height: 192px;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    font-family: Marion, "Times New Roman", serif;
+  }
+  #overview .box.status {
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
+  }
+
+  #detail .box.status {
+    display: none;
+  }
+  #detail .box.excerpt {
+    background-image: none;
+    border-color: transparent;
+    width: auto;
+  }
+  #detail .box.excerpt blockquote {
+    font-family: Marion, "Times New Roman", serif;
+  }
+  #detail .box.excerpt blockquote p, #detail .box.excerpt blockquote li {
+    font-family: Marion, "Times New Roman", serif;
+  }
+  #detail .box.excerpt p, #detail .box.excerpt li {
+    color: #000;
+  }
+  #detail .box.excerpt p em, #detail .box.excerpt p strong, #detail .box.excerpt li em, #detail .box.excerpt li strong {
+    color: #000;
+  }
+  #detail .box.excerpt .more {
+    display: none;
+  }
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of boxes.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */

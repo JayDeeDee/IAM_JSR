@@ -1,0 +1,42 @@
+@import "01_project.scss";
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//  04_phone.scss
+//  Author: Jana Deutschlaender
+//  VFH Berlin, Modul IAM
+//  14|10|10
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen: 
+ * page structure */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+@media handheld, screen {
+
+    .iphone{
+        width: 378px; margin: 0 auto; position: relative; 
+        iframe{ 
+            position: absolute; top: 0; left: 0; 
+            margin: 117px 0 0 28px;
+        }
+    }
+    body{
+     background:  $bggrey; 
+    }
+    
+    h1{
+        color: $lightgrey2;
+        text-transform: uppercase;
+        font-size: 24pt;
+        padding: 20px 20px 0;
+        height: 80px;
+        text-align: center;
+        display: block;
+    }
+
+
+}
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of phone.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */

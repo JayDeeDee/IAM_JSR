@@ -1,0 +1,29 @@
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//  01_project.scss
+//  Author: Jana Deutschlaender
+//  VFH Berlin, Modul IAM
+//  14|10|10
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+// project variables
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+$font-family: /*'Avenir Medium',*/ Nunito, sans-serif;
+$font-family2: /*'Marion Regular',*/ Marion,"Times New Roman",serif;
+$font-family3: /*'Avenir Roman',*/ Nunito, sans-serif;
+$font-family4: /*'Avenir Black',*/ Nunito, sans-serif;
+
+$bggrey: #2D2D2D;       //RGB 45/45/45 Medienverweise
+$bggrey2: #5A5A5A;      //RGB 90/90/90 Hintergrundfarbe der Seite
+
+$lightgrey: #F2F2F2;    //RGB 242/242/242 hellgraue Schrift Medienverweise
+$lightgrey2: #CCCCCC;   //RGB 204/204/204 hellgraue Schrift H1
+$cgrey: #808080;        //RGB 128/128/128 graue Schrift Back
+$cgrey2: #4D4D4D;       //RGB 77/77/77 graue Schrift Textauszugsbox
+$cblue: #3FA9F5;        //RGB 63/169/245 blaue Schrift Medienverweise
+
+$path: '../../img/';
+$url_bg_back: url(unquote( $path+'bg_back.gif'));
+$url_bg_h2media: url(unquote( $path+'pfeil_blau_1s.png'));
+$url_bg_excerpt: url(unquote( $path+'bg_merkliste.png'));
+

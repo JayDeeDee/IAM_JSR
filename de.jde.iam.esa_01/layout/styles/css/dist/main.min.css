@@ -1,0 +1,590 @@
+@charset "UTF-8";
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* STYLES FOR TEMPLATE Werk 
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media types: 
+ * overwrite browser vendor styles
+ * grid for scaling */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+* {
+  font-family: Nunito, sans-serif;
+}
+
+html, body, div, span, object, article, section, figure, figcaption,
+h1, h2, h3, h4, h5, h6, p,
+blockquote, a, abbr, em,
+acronym, img, strong, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, select, option, textarea, button,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background-color: transparent;
+  background-image: none;
+  border: none 0;
+  outline: 0;
+  vertical-align: baseline;
+  color: #000;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14pt;
+  font-family: Nunito, sans-serif;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none outside none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+acronym, abbr {
+  cursor: help;
+  border-bottom: dotted 1px #000;
+}
+
+a:link acronym, a:link abbr, a:visited acronym, a:visited abbr, a:hover acronym, a:hover abbr, a:focus acronym, a:focus abbr, a:active acronym, a:active abbr {
+  cursor: pointer;
+}
+
+*:focus {
+  outline: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  caption-side: top;
+}
+
+caption, th, td {
+  text-align: left;
+  vertical-align: top;
+}
+
+img {
+  display: block;
+  float: none;
+  border: none 0;
+  font-size: 14pt;
+}
+
+form label {
+  cursor: pointer;
+}
+form .mandatory {
+  font-family: Nunito, sans-serif;
+  font-size: 14pt;
+}
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+@media handheld, screen {
+  /* + + + + + Webfonts+ + + + + */
+  @font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 300;
+    src: local("Nunito-Light"), url("../../fonts/nunito-light.woff") format("woff");
+  }
+  /* + + + + + general basics + + + + + */
+  html, body {
+    min-height: 100%;
+    width: 100%;
+    color: #f2f2f2;
+  }
+
+  html {
+    background-color: #5a5a5a;
+  }
+
+  .none, .structure, .mobile {
+    display: none;
+  }
+
+  .out, .campaigne, .docjs .navLang li, .start .breadcrumb, .breadcrumb .prefix, .container.pagefooter {
+    position: absolute;
+    top: -20000em;
+    left: -20000em;
+  }
+
+  .clearer {
+    clear: both;
+  }
+
+  .float_left {
+    float: left;
+  }
+
+  .float_right {
+    float: right;
+  }
+
+  .grossbuchstaben {
+    text-transform: uppercase !important;
+  }
+
+  .minor {
+    font-weight: normal !important;
+  }
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type print */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+@media print {
+  .noprint {
+    display: none !important;
+  }
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of visual.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen: 
+ * page structure */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+@media handheld, screen {
+  body, html {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body {
+    overflow: auto;
+    background-color: #5a5a5a;
+    transition: all 2000ms ease-in-out 0s;
+  }
+
+  /* animations, interaction */
+  nav.back a:link, nav.back a:visited {
+    transition: all 250ms ease-in-out 0s;
+  }
+  nav.back a:link span, nav.back a:visited span {
+    transition: all 250ms ease-in-out 0s;
+  }
+
+  /* backlink */
+  nav.back {
+    height: 30px;
+    width: 100%;
+    background: #040404 url(../../img/bg_back.gif) repeat-x 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+  nav.back a:link, nav.back a:visited, nav.back span {
+    font-family: Nunito, sans-serif;
+    font-size: 12pt;
+    /* sg: 27pt  */
+    text-transform: uppercase;
+    text-decoration: none;
+    color: gray;
+  }
+  nav.back a:link, nav.back a:visited {
+    display: block;
+    height: 30px;
+    padding: .4em 0 0 10px;
+  }
+  nav.back a:link span:before, nav.back a:visited span:before {
+    content: "<< ";
+  }
+
+  /* config buttons */
+  nav#config {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 25;
+    display: inline-block;
+    text-align: right;
+  }
+  nav#config li {
+    border-right: 1px solid gray;
+  }
+  nav#config li:first-child, nav#config li:last-child {
+    border-right-width: 0px;
+  }
+  nav#config a#config_switch {
+    position: absolute;
+    bottom: -16px;
+    right: 6px;
+    font-size: 9px;
+    text-align: right;
+    color: #cccccc;
+  }
+  nav#config a#config_switch:hover,
+  nav#config a#config_switch:focus,
+  nav#config a#config_switch:active {
+    color: #fff;
+  }
+  nav#config ul, nav#config li {
+    float: right;
+    font-size: 9pt;
+    padding: .3em .6em .3em;
+    line-height: 100%;
+  }
+  nav#config ul a:link, nav#config ul a:visited, nav#config li a:link, nav#config li a:visited {
+    color: gray;
+    font-size: 9pt;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  nav#config ul a:hover, nav#config ul a:active, nav#config ul a:focus, nav#config li a:hover, nav#config li a:active, nav#config li a:focus {
+    color: #fff;
+  }
+  nav#config ul a:hover span, nav#config ul a:active span, nav#config ul a:focus span, nav#config li a:hover span, nav#config li a:active span, nav#config li a:focus span {
+    color: #fff;
+  }
+  nav#config ul {
+    padding-top: .5em;
+    padding-right: 0;
+  }
+
+  /* overview */
+  #overview {
+    background-color: #5a5a5a;
+  }
+  #overview nav.back a:link, #overview nav.back a:visited {
+    cursor: default;
+  }
+  #overview .scrollview {
+    position: relative;
+    top: 110px;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: auto;
+    min-height: 90%;
+    z-index: 10;
+    white-space: nowrap;
+  }
+  #overview .col {
+    float: left;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+                   /* laut Aufgabenstellung sollen nur die Größenangaben der Gestaltungsvorgaben halbiert werden,
+die 20px Abstand sind jedoch als Anforderung explizit benannt */
+    white-space: normal;
+  }
+  #overview .main {
+    width: 760px;
+    white-space: nowrap;
+  }
+  #overview .main_title {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding-top: 30px;
+    width: 100%;
+    z-index: 15;
+  }
+  #overview h1 {
+    color: #cccccc;
+    text-transform: none;
+    font-size: 24pt;
+    line-height: 90%;
+    padding: 20px 8px 0;
+    /*Ausgleich letterspacing des Webfonts*/
+    height: 80px;
+    box-sizing: border-box;
+    background-color: rgba(90, 90, 90, 0.5);
+  }
+
+  /* detail */
+  #detail {
+    background-color: #fff;
+    max-height: 100%;
+    overflow: hidden;
+  }
+  #detail .box .inner {
+    margin: 0;
+  }
+  #detail .wrapper {
+    position: relative;
+    height: 100%;
+  }
+  #detail nav#config {
+    display: none;
+  }
+  #detail article {
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    top: 30px;
+    overflow: auto;
+    border-bottom: 30px solid #fff;
+  }
+  #detail nav.back {
+    display: inline-block;
+  }
+  #detail nav.back a:hover, #detail nav.back a:active, #detail nav.back a:focus {
+    color: #fff;
+  }
+  #detail nav.back a:hover span, #detail nav.back a:active span, #detail nav.back a:focus span {
+    color: #fff;
+  }
+  #detail .obj, #detail .media_link {
+    display: none;
+  }
+  #detail .col {
+    padding: 0 10px;
+  }
+  #detail h1 {
+    color: #3fa9f5;
+    text-transform: uppercase;
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 0 10px 0;
+    padding: 10px 0 15px;
+    border-bottom: 1px dashed #3fa9f5;
+  }
+  #detail h2 {
+    display: none;
+  }
+
+  article {
+    /*visibility: visible;*/
+    opacity: 1;
+  }
+
+  article.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 2s, opacity 2s ease-in;
+  }
+
+  article.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s ease-out 0.1s, visibility 0s linear;
+  }
+
+  .view {
+    transition: all 2000ms ease-in-out 0s;
+    opacity: 1;
+  }
+}
+/* fuer den IPhone Preview */
+@media only screen and (height: 568px) {
+  #overview .scrollview {
+    min-height: 456px;
+  }
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of structure.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen: 
+ * page structure */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@media handheld, screen {
+  .box {
+    width: 200px;
+    /*360/2 + 2* 20/2*/
+    min-height: 20px;
+    border: 0px solid #5a5a5a;
+  }
+  .box .boxhead {
+    margin: 0 10px 0;
+    padding-top: 7px;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box .inner {
+    margin: 0 10px 10px;
+    padding-bottom: 10px;
+  }
+  .box h2 {
+    color: #3fa9f5;
+    text-transform: uppercase;
+    font-size: 15pt;
+    padding: 0 26px 7px 0;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box li, .box p, .box a:link, .box a:visited {
+    font-size: 12pt;
+    line-height: 120%;
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+  .box li em, .box li strong, .box li span, .box p em, .box p strong, .box p span, .box a:link em, .box a:link strong, .box a:link span, .box a:visited em, .box a:visited strong, .box a:visited span {
+    font-size: 12pt;
+  }
+  .box li em, .box p em, .box a:link em, .box a:visited em {
+    font-style: italic;
+  }
+  .box li strong, .box p strong, .box a:link strong, .box a:visited strong {
+    font-weight: bold;
+  }
+  .box a:hover, .box a:focus, .box a:active {
+    /*color: #fff;*/
+  }
+  .box p.intro {
+    padding-bottom: 16px;
+  }
+
+  .box.status {
+    white-space: normal;
+    width: 360px;
+    max-width: 100%;
+  }
+  .box.status h2 {
+    padding-left: 12px;
+    font-size: 12pt;
+  }
+  .box.status p {
+    padding-left: 12px;
+    font-size: 11pt;
+  }
+
+  .box.media_link {
+    background-color: #2d2d2d;
+  }
+  .box.media_link .inner {
+    margin-bottom: 20px;
+  }
+  .box.media_link li {
+    border-top: 1px dashed #f2f2f2;
+    padding: 7px 0;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box.media_link li a:hover, .box.media_link li a:focus, .box.media_link li a:active {
+    color: #fff;
+  }
+  .box.media_link h2 {
+    background: url(../../img/pfeil_blau_1s.png) no-repeat right 0px;
+  }
+
+  .box.excerpt {
+    background: url(../../img/bg_merkliste.png) repeat 0 0;
+  }
+  .box.excerpt p, .box.excerpt li, .box.excerpt blockquote, .box.excerpt a:link, .box.excerpt a:visited, .box.excerpt strong, .box.excerpt em, .box.excerpt span {
+    font-family: Marion, "Times New Roman", serif;
+    font-size: 11pt;
+  }
+  .box.excerpt p, .box.excerpt li {
+    color: #4d4d4d;
+  }
+  .box.excerpt p em, .box.excerpt p strong, .box.excerpt li em, .box.excerpt li strong {
+    color: #4d4d4d;
+  }
+  .box.excerpt p strong, .box.excerpt li strong {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  .box.excerpt blockquote {
+    margin: 7px 0 17px 0;
+    /*10px - Ausgleich Line height 3px */
+  }
+  .box.excerpt .more a:link, .box.excerpt .more a:visited {
+    color: #3fa9f5;
+    background: url(../../img/pfeil_blau_1s.png) no-repeat 0 0;
+    padding-left: 32px;
+  }
+  .box.excerpt .more a:hover, .box.excerpt .more a:focus, .box.excerpt .more a:active {
+    background-size: 28px 20px;
+  }
+
+  .box.obj {
+    background-color: #fff;
+    display: inline-block;
+    width: auto;
+    max-width: 280px;
+    /*max-height: 280px;*/
+    overflow: hidden;
+  }
+  .box.obj figure {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .box.obj figure img {
+    height: auto;
+    max-height: 195px;
+    max-width: 230px;
+    width: auto;
+  }
+  .box.obj .boxhead {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .box.obj .inner {
+    padding: 25px;
+    margin: 0;
+  }
+  .box.obj h2 {
+    border-bottom: 1px dashed gray;
+    color: gray;
+  }
+  .box.obj .more.description {
+    position: absolute;
+    right: 5px;
+    top: 9px;
+  }
+  .box.obj .more.description a:hover img, .box.obj .more.description a:focus img, .box.obj .more.description a:active img {
+    width: 110%;
+    height: auto;
+  }
+
+  #overview .box.excerpt blockquote {
+    height: 192px;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    font-family: Marion, "Times New Roman", serif;
+  }
+  #overview .box.status {
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
+  }
+
+  #detail .box.status {
+    display: none;
+  }
+  #detail .box.excerpt {
+    background-image: none;
+    border-color: transparent;
+    width: auto;
+  }
+  #detail .box.excerpt blockquote {
+    font-family: Marion, "Times New Roman", serif;
+  }
+  #detail .box.excerpt blockquote p, #detail .box.excerpt blockquote li {
+    font-family: Marion, "Times New Roman", serif;
+  }
+  #detail .box.excerpt p, #detail .box.excerpt li {
+    color: #000;
+  }
+  #detail .box.excerpt p em, #detail .box.excerpt p strong, #detail .box.excerpt li em, #detail .box.excerpt li strong {
+    color: #000;
+  }
+  #detail .box.excerpt .more {
+    display: none;
+  }
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of boxes.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */

@@ -1,0 +1,249 @@
+@import "01_project.scss";
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//  03_structure.scss
+//  Author: Jana Deutschlaender
+//  VFH Berlin, Modul IAM
+//  14|10|10
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen: 
+ * page structure */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+@media handheld, screen {
+  
+  body, html{
+    height: 100%; position: relative; 
+    overflow: hidden;
+  }
+  
+  body{
+    overflow: auto;
+    background-color: $bggrey2; 
+    transition: all 2000ms ease-in-out 0s;
+  }
+  
+    /* animations, interaction */
+   nav.back{
+      a:link, a:visited{
+          span{
+            transition: all 250ms ease-in-out 0s;
+          }
+          transition: all 250ms ease-in-out 0s;
+      }
+    }
+
+  /* backlink */
+    nav.back{
+        height: 30px; width: 100%;
+        background: #040404 $url_bg_back repeat-x 0 0;
+        position: fixed; top:0; left: 0; 
+        z-index: 20;
+        
+        a:link, a:visited, span{
+            font-family: $font-family4; 
+            font-size: 12pt; /* sg: 27pt  */
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $cgrey;
+        }
+        
+        a:link, a:visited{
+            display: block;
+            height: 30px;
+            padding: .4em 0 0 10px;
+            span:before{ content: "<< "; }
+        }
+        
+    }
+    
+    /* config buttons */
+    nav#config{
+        position: absolute; top: 0; right: 0; z-index: 25;
+        display: inline-block; 
+        text-align: right;
+        
+        li{ border-right: 1px solid $cgrey;  }
+        li:first-child, li:last-child{ border-right-width: 0px; }
+        a#config_switch{
+          position: absolute; bottom: -16px; right: 6px; 
+          font-size: 9px; text-align: right;
+          color: $lightgrey2;
+        }
+        a#config_switch:hover,
+        a#config_switch:focus,
+        a#config_switch:active{
+          color: #fff;
+        }
+        ul, li{
+            float: right; font-size: 9pt;
+            padding: .3em .6em .3em; 
+            line-height: 100%;
+            a:link, a:visited{
+                color: $cgrey; font-size: 9pt;
+                text-decoration: none; text-transform: uppercase;
+            }
+            a:hover, a:active, a:focus{
+                color: #fff;
+                span{
+                    color: #fff; 
+                }
+            }
+        }
+        ul{ padding-top: .5em; padding-right: 0; }
+    }
+    
+    /* overview */
+    #overview{
+        background-color: $bggrey2; 
+        nav.back{
+            a:link, a:visited{
+              cursor: default;
+            }
+        }
+
+        .scrollview{
+            position: relative; top: 110px; left:0; 
+            max-width: 100%; width: 100%; overflow: auto;
+            min-height: 90%;
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        .col{
+            float: left;
+            display: inline-block;
+            position: relative; top: 0;
+            margin-right: 10px;
+            margin-left: 10px; /* laut Aufgabenstellung sollen nur die Größenangaben der Gestaltungsvorgaben halbiert werden,
+            die 20px Abstand sind jedoch als Anforderung explizit benannt */
+            white-space: normal;
+        }
+
+        .thirdcol{
+            
+        }
+
+        .main{
+            width: 760px; 
+            white-space: nowrap;
+        }
+        
+        .main_title{
+            position: fixed; top: 0px; left: 0px;
+            padding-top: 30px;
+            width: 100%;
+            z-index: 15;
+        }
+
+        h1{
+            color: $lightgrey2;
+            text-transform: none;
+            font-size: 24pt; line-height: 90%;
+            padding: 20px 8px 0; /*Ausgleich letterspacing des Webfonts*/
+            height: 80px;
+            box-sizing: border-box;
+            background-color: rgba(90,90,90,0.5);
+        }
+
+    }
+    
+    /* detail */
+    #detail{
+        background-color: #fff;
+        max-height: 100%;
+        overflow: hidden;
+        
+        .box .inner{
+          margin: 0;
+        }
+        
+        .wrapper{
+          position: relative; height: 100%;
+        }
+        nav#config{
+          //top: -30px;
+          display: none;
+        }
+        article{
+          box-sizing: border-box;
+          position: relative; height: 100%;
+          top: 30px; 
+          overflow: auto;
+          border-bottom: 30px solid #fff;
+        }
+        nav.back{
+            display: inline-block;
+            
+            a:hover, a:active, a:focus{
+                color: #fff;
+                span{
+                    color: #fff; 
+                }
+            }
+        }
+
+        .obj, .media_link{
+            display: none;
+        }
+
+        .col{
+            padding: 0 10px;
+         
+        }
+
+        h1{
+            color: $cblue;
+            text-transform: uppercase;
+            font-size: 16pt;  
+            font-weight: bold;
+            margin: 0 10px 0;
+            padding: 10px 0 15px;
+            border-bottom: 1px dashed $cblue;
+        }
+        
+        h2{
+            display: none;
+        }
+        
+    }
+    
+    article{
+        /*visibility: visible;*/
+        opacity: 1;
+    }
+    
+    article.hide{
+        visibility: hidden;
+        opacity:0;
+        transition: visibility 0s linear 2s, opacity 2s ease-in;
+    }
+
+    article.show{
+        visibility: visible;
+        opacity:1;
+        transition: opacity 2s ease-out 0.1s, visibility 0s linear;
+    }
+    
+    .view{
+      transition: all 2000ms ease-in-out 0s;
+      opacity: 1;
+      
+    }
+
+}
+
+
+/* fuer den IPhone Preview */
+@media only screen and (height:  568px){
+ 
+ #overview .scrollview{
+   min-height: 456px;
+ }
+
+}
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of structure.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */

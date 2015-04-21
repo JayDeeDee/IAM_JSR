@@ -1,0 +1,99 @@
+@import "01_project.scss";
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//  02_visual.scss
+//  Author: Jana Deutschlaender
+//  VFH Berlin, Modul IAM
+//  14|10|10
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media types: 
+ * overwrite browser vendor styles
+ * grid for scaling */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+*{ font-family: $font-family; }
+
+html, body, div, span, object,article,section,figure,figcaption,
+h1, h2, h3, h4, h5, h6, p, 
+blockquote, a, abbr, em, 
+acronym, img, strong, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, input, select, option, textarea, button,
+table, caption, tbody, tfoot, thead, tr, th, td { 
+    background-color: transparent; background-image: none; 
+    border: none 0; outline: 0; vertical-align: baseline;
+    color: #000; font-weight: normal; font-style: normal; font-size: 14pt; font-family: $font-family; line-height: 100%;
+    margin: 0; padding: 0; 
+}
+
+
+ol, ul{ list-style: none outside none; }
+blockquote, q{ quotes: none; }
+acronym, abbr{ cursor: help; border-bottom: dotted 1px #000; }
+a:link, a:visited, a:hover, a:focus, a:active{
+    acronym, abbr{ cursor: pointer; }
+}
+
+*:focus{ outline: 0; }
+
+table{ border-collapse: collapse; border-spacing: 0; empty-cells: show; caption-side: top; }
+caption, th, td{ text-align: left; vertical-align: top; }
+
+img{ display: block; float: none; border: none 0; font-size: 14pt; }
+
+form{
+    label{ cursor: pointer; }
+    .mandatory{ font-family: $font-family; font-size: 14pt; }
+}
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+@media handheld, screen {
+
+
+/* + + + + + Webfonts+ + + + + */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url('../../fonts/nunito-light.woff') format('woff');
+}
+
+
+
+/* + + + + + general basics + + + + + */
+    html, body{ 
+        min-height: 100%; width: 100%; 
+        color: $lightgrey; 
+    }
+    html {
+      background-color: $bggrey2; 
+    }
+
+    .none, .structure, .mobile{ 
+        display: none; 
+    }
+    .out, .campaigne, .docjs .navLang li, .start .breadcrumb, .breadcrumb .prefix, .container.pagefooter{
+        position: absolute; top: -20000em; left: -20000em; 
+    }
+
+    .clearer{ clear: both; }
+    .float_left{ float: left; }
+    .float_right{ float: right; }
+    .grossbuchstaben{ text-transform: uppercase !important; }
+    .minor{ font-weight: normal !important; }
+
+}
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type print */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+@media print {
+    .noprint{
+        display: none !important;
+    }
+}
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of visual.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */

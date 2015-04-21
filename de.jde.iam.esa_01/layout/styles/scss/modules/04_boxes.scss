@@ -1,0 +1,205 @@
+@import "01_project.scss";
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//  04_boxes.scss
+//  Author: Jana Deutschlaender
+//  VFH Berlin, Modul IAM
+//  14|10|10
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* styles for all media type screen: 
+ * page structure */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@media handheld, screen {
+
+    .box{
+        width: 200px; /*360/2 + 2* 20/2*/
+        min-height: 20px;
+        border: 0px solid $bggrey2;
+    
+        .boxhead{
+            margin: 0 10px 0;
+            padding-top:  7px; /*10px - Ausgleich Line height 3px */
+        }
+        .inner{
+            margin: 0 10px 10px;
+            padding-bottom: 10px;
+        }
+        h2{
+            color: $cblue;
+            text-transform: uppercase;
+            font-size: 15pt;  
+            padding: 0 26px 7px 0;  /*10px - Ausgleich Line height 3px */
+        }
+        li, p, a:link, a:visited{
+            font-size: 12pt; line-height: 120%; color: $lightgrey;
+            text-decoration: none;
+            em, strong, span{
+                font-size: 12pt;
+            }
+            em{
+                font-style: italic;
+            }
+            strong{
+                font-weight: bold;
+            }
+        }
+        a:hover, a:focus, a:active{
+            /*color: #fff;*/
+        }
+        p.intro{
+            padding-bottom: 16px;
+        }
+    }
+    
+    .box.status{ 
+        white-space: normal;
+        width: 360px; max-width: 100%;
+        h2{
+            padding-left: 12px;
+            font-size: 12pt;
+        }
+        p{
+            padding-left: 12px;
+            font-size: 11pt;
+        } 
+    }
+    
+    .box.media_link{
+        background-color: $bggrey;
+        .inner{
+          margin-bottom: 20px;
+        }
+        li{
+            border-top: 1px dashed $lightgrey;
+            padding: 7px 0; /*10px - Ausgleich Line height 3px */
+            a:hover, a:focus, a:active{
+              color: #fff;
+            }
+        }
+        h2{
+            background: $url_bg_h2media no-repeat right 0px;
+        }
+    }
+    
+    .box.excerpt{
+        background: $url_bg_excerpt repeat 0 0;
+        p, li, blockquote, a:link, a:visited, strong, em, span{
+            font-family: $font-family2; font-size: 11pt;
+        }
+        p, li{
+            color: $cgrey2;
+            em, strong{
+                color: $cgrey2;
+            }
+            strong{
+                font-weight: normal;
+                text-transform: uppercase;
+            }
+        }
+        blockquote{
+            margin: 7px 0 17px 0; /*10px - Ausgleich Line height 3px */
+        }
+        .more{
+            a:link, a:visited{
+                color: $cblue;
+                background: $url_bg_h2media no-repeat 0 0;
+                padding-left: 32px;
+            }
+            a:hover, a:focus, a:active{
+              background-size: 28px 20px;
+            }
+        }
+    }
+    .box.obj{
+        background-color: #fff;
+        display: inline-block;
+        width: auto; max-width: 280px; /*max-height: 280px;*/
+        overflow: hidden;
+        figure{
+            display: block;
+            height: auto; 
+            margin: 0 auto; 
+            max-width: 100%;
+            img{
+                height: auto; max-height: 195px;
+                max-width: 230px; width: auto;
+            }
+        }
+        .boxhead{
+            position: relative; top: 0; left:0; 
+        }
+        .inner{
+            padding: 25px;
+            margin: 0;
+        }
+        h2{
+            border-bottom: 1px dashed $cgrey;
+            color: $cgrey;
+        }
+        .more.description{
+            position: absolute; right: 5px; top: 9px;
+            a:hover, a:focus, a:active{
+              img{
+                width:110%; height: auto;
+              }
+            }
+        }
+    }
+    
+    #overview{
+        .box.excerpt{
+            blockquote{
+                height: 192px;
+                position: relative; top:0; left:0;
+                overflow: hidden;
+                font-family: $font-family2;
+            }
+        }
+        .box.status{ 
+            opacity: 0;
+            animation:fadeIn ease-in 1;
+            animation-fill-mode:forwards;
+            animation-duration: 1s;
+            animation-delay: 1s;          
+        }
+        
+    }
+
+    #detail{
+
+        .box.status{ 
+          display: none;
+        }
+        
+        .box.excerpt{
+            background-image: none;
+            border-color: transparent;
+            width: auto;
+            blockquote{
+              font-family: $font-family2;
+              p, li{
+                font-family: $font-family2;
+              }
+            }
+            p, li{
+                color: #000;
+                
+                em, strong{
+                    color: #000;
+                }
+            }
+            .more{
+                display: none;
+            }
+        }
+    }
+
+}
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+  end of boxes.scss
+  + + + + + + + + + + + + + + + + + + + + + + + + + + + */
